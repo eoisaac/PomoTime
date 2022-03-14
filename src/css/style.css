@@ -61,8 +61,10 @@
 
 .areas__pomodoro {
 	display: flex;
+	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	gap: var(--large-gap);
 }
 
 .timer {
@@ -96,4 +98,10 @@
 	position: relative;
 	font-size: var(--huge-font-size);
 	color: var(--white);
+}
+
+.timer__btn {
+	position: absolute;
+	inset: auto auto var(--big-gap) auto;
+	z-index: 4;
 }
