@@ -2,12 +2,7 @@
 	width: 100vw;
 	height: 100vh;
 	background-color: var(--dark-black);
-}
-
-.main {
-	width: 100%;
-	height: 100%;
-	padding: 0 var(--tiny-padding);
+	padding: var(--tiny-padding);
 }
 
 .box-btn {
@@ -26,10 +21,12 @@
 
 .header {
 	width: 100%;
+	position: absolute;
+	inset: 0 0 auto 0;
 	display: inline-flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: var(--small-padding);
+	padding: var(--tiny-padding);
 }
 
 .header__title {
@@ -52,4 +49,10 @@
 
 .menu-btn__label {
 	display: none;
+}
+
+.main {
+	width: 100%;
+	height: 100%;
+	padding-top: var(--big-padding);
 }
