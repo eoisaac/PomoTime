@@ -34,7 +34,7 @@
   --huge-font-size: 7.8rem;
 
   /*Border*/
-  --main-border-radius: 5px; /* 0.8rem */
+  --main-border-radius: 5px; 
   --round-border-radius: 50%;
 
   /*Margin*/
@@ -67,4 +67,5 @@ html {
   font-family: var(--sans-serif-font);
   font-weight: 400;
   scroll-behavior: smooth;
+  background-color: var(--dark-black);
 }

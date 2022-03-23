@@ -70,10 +70,36 @@
 	gap: var(--huge-gap);
 }
 
-.timer {
+.pomodoro__types {
+	width: 100%;
+	display: inline-flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: var(--small-gap);
+}
+
+.types__options {
+	width: 100%;
+	/* padding: var(--small-padding); */
+	border-radius: var(--main-border-radius);
+	text-align: center;
+	color: var(--white);
+	font-size: var(--medium-font-size);
+}
+
+
+.pomodoro__timer {
 	width: 250px;
 	height: 250px;
 	border-radius: var(--round-border-radius);
+}
+
+.timer__status {
+	position: absolute;
+	inset:  auto auto var(--huge-gap) auto;
+	color: var(--white);
+	font-family: var(--monospace-font);
+	font-size: var(--medium-font-size);
 }
 
 .timer__progress {
@@ -101,8 +127,3 @@
 	color: var(--white);
 }
 
-.timer__btn {
-	position: absolute;
-	inset: auto auto var(--big-gap) auto;
-	z-index: 4;
-}
