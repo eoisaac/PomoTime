@@ -29,11 +29,11 @@
           <h1 class="header__title">PomoTime</h1>
 
           <div class="header__menu">
-            <button class="box-btn">
+            <button class="box-btn" data-js="user-btn">
               <i class="uil uil-user-circle"></i>
               <span class="btn__label"> Login </span>
             </button>
-            <button class="box-btn">
+            <button class="box-btn" data-js="settings-btn">
               <i class="uil uil-setting"></i>
               <span class="btn__label"> Settings </span>
             </button>
@@ -44,22 +44,25 @@
 
           <section class="areas__pomodoro">
 
-            <div class="pomodoro__types">
-              <button class="box-btn">
+            <div class="pomodoro__modes">
+              <button class="box-btn" data-js="prev-btn">
                 <i class="uil uil-angle-left"></i>
               </button>
 
-              <div class="types__options">
-                Short Break
-              </div>
-              <!-- <div class="types__options">
-                Short Break
-              </div>
-              <div class="types__options">
-                Short Break
-              </div> -->
+              <div class="options-wrap">
 
-              <button class="box-btn">
+                <div class="mode__option mode__option--visible">
+                  Pomodoro
+                </div>
+                <div class="mode__option">
+                  Short Break
+                </div>
+                <div class="mode__option">
+                  Long Break
+                </div>
+              </div>
+
+              <button class="box-btn" data-js="next-btn">
                 <i class="uil uil-angle-right"></i>
               </button>
             </div>
@@ -79,5 +82,7 @@
         </div>
       </main>
     </div>
+
+    <script src="src/js/script.js"></script>
   </body>
 </html>

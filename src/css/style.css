@@ -70,7 +70,7 @@
 	gap: var(--huge-gap);
 }
 
-.pomodoro__types {
+.pomodoro__modes {
 	width: 100%;
 	display: inline-flex;
 	align-items: center;
@@ -78,13 +78,19 @@
 	gap: var(--small-gap);
 }
 
-.types__options {
+.mode__option {
 	width: 100%;
+	display: none;
 	/* padding: var(--small-padding); */
 	border-radius: var(--main-border-radius);
 	text-align: center;
 	color: var(--white);
 	font-size: var(--medium-font-size);
+	font-family: var(--monospace-font);
+}
+
+.mode__option--visible {
+	display: block;
 }
 
 
@@ -126,4 +132,3 @@
 	font-size: var(--huge-font-size);
 	color: var(--white);
 }
-
