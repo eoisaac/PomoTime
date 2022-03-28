@@ -7,8 +7,10 @@ const timer = {
   nextBtn: document.querySelector('[data-js="next-btn"]'),
   prevBtn: document.querySelector('[data-js="prev-btn"]'),
   modeOptions: document.querySelectorAll('.mode__option '),
+  startStopBtn: document.querySelector('[data-js="start-stop-btn"]'),
 };
 
+// Timer options
 let lastModeOption = timer.modeOptions.length - 1;
 let currentModeOption = 0;
 
@@ -36,3 +38,17 @@ timer.prevBtn.addEventListener('click', () => {
 
   changeModeOptions(optionIndex);
 });
+
+// Settings Modal
+const settings = {
+  modal: document.querySelector('[data-js="modal"]'),
+  closeBtn: document.querySelector('[data-js="close-modal-btn"]'),
+}
+
+const toggleSettingsModal = () => {
+  settings.modal.classList.toggle('modal--visible');
+}
+
+interface.settingsBtn.addEventListener('click', toggleSettingsModal);
+settings.closeBtn.addEventListener('click', toggleSettingsModal);
+

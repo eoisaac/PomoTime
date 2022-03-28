@@ -93,7 +93,6 @@
 	display: block;
 }
 
-
 .pomodoro__timer {
 	width: 250px;
 	height: 250px;
@@ -131,4 +130,26 @@
 	position: relative;
 	font-size: var(--huge-font-size);
 	color: var(--white);
+}
+
+/* [SETTINGS MODAL]============================================================ */
+.modal {
+	width: 100vw;
+	height: 100vh;
+	display: none;
+	place-items: center;
+	position: fixed;
+	inset: 0 0;
+	background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal.modal--visible {
+	display: grid;
+}
+
+.modal__container {
+	width: 25%;
+	min-width: 250px;
+	height: 500px;
+	background-color: var(--dark-black);
 }
