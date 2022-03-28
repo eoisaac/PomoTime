@@ -152,4 +152,5 @@
 	min-width: 250px;
 	height: 500px;
 	background-color: var(--dark-black);
+	border-radius: var(--main-border-radius);
 }

@@ -8,9 +8,12 @@ const timer = {
   prevBtn: document.querySelector('[data-js="prev-btn"]'),
   modeOptions: document.querySelectorAll('.mode__option '),
   startStopBtn: document.querySelector('[data-js="start-stop-btn"]'),
+  status: document.querySelector('[data-js="status-msg"]'),
 };
 
 // Timer options
+const statusMessage = ['Work!', 'Relax!', 'Relax!'];
+
 let lastModeOption = timer.modeOptions.length - 1;
 let currentModeOption = 0;
 
@@ -18,6 +21,8 @@ const changeModeOptions = (optionIndex) => {
   timer.modeOptions.forEach((option) => {
     option.classList.remove('mode__option--visible');
     timer.modeOptions[optionIndex].classList.add('mode__option--visible');
+
+    timer.status.textContent = statusMessage[optionIndex];
   });
 };
 
@@ -42,7 +47,8 @@ timer.prevBtn.addEventListener('click', () => {
 // Settings Modal
 const settings = {
   modal: document.querySelector('[data-js="modal"]'),
-  closeBtn: document.querySelector('[data-js="close-modal-btn"]'),
+  closeBtn: document.querySelector('[data-js="close-modal-btn"]'), 
+  SaveBtn: document.querySelector('[data-js="save-settings-btn"]'), 
 }
 
 const toggleSettingsModal = () => {
@@ -51,4 +57,4 @@ const toggleSettingsModal = () => {
 
 interface.settingsBtn.addEventListener('click', toggleSettingsModal);
 settings.closeBtn.addEventListener('click', toggleSettingsModal);
-
+settings.SaveBtn.addEventListener('click', toggleSettingsModal);

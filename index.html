@@ -69,7 +69,7 @@
 
             <div class="pomodoro__timer ">
               <div class="timer__progress">
-                <div class="timer__status">Work!</div>
+                <div class="timer__status" data-js="status-msg">Work!</div>
                 <div class="timer__clock">25:00</div>
               </div>
             </div>
@@ -85,7 +85,13 @@
 
     <div class="modal" data-js="modal">
       <div class="modal__container">
-        <button data-js="close-modal-btn"></button>
+        <button class="box-btn" data-js="close-modal-btn">
+          <i class="uil uil-times"></i>
+        </button>
+
+        <button class="box-btn" data-js="save-settings-btn">
+          <i class="uil uil-save"> Save</i>
+        </button>
       </div>
     </div>
 
