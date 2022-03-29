@@ -2,8 +2,12 @@
 }
 
 @media (min-width: 768px) {
-	.header__title {
+	.main__title {
 		font-size: var(--large-font-size);
+	}
+
+	.main__title--medium  {
+		font-size: var(--medium-font-size);
 	}
 
 	.btn__label {

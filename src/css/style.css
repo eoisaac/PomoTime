@@ -40,11 +40,26 @@
 	align-items: center;
 }
 
-.header__title {
+.main__title {
 	font-family: var(--sans-serif-font);
-	font-size: var(--big-font-size);
 	font-weight: var(--large-font-weight);
+	font-size: var(--big-font-size);
 	color: var(--white);
+}
+
+.main__title--medium {
+	font-size: var(--medium-font-size);
+}
+
+.main__subtitle {
+	font-family: var(--sans-serif-font);
+	font-weight: var(--large-font-weight);
+	font-size: var(--medium-font-size);
+	color: var(--light-gray);
+}
+
+.main__subtitle--small {
+	font-size: var(--small-font-size);
 }
 
 .header__menu {
@@ -59,7 +74,6 @@
 	display: grid;
 	place-items: center;
 }
-
 
 /* [POMODORO TIMER]============================================================ */
 .areas__pomodoro {
@@ -81,7 +95,6 @@
 .mode__option {
 	width: 100%;
 	display: none;
-	/* padding: var(--small-padding); */
 	border-radius: var(--main-border-radius);
 	text-align: center;
 	color: var(--white);
@@ -151,6 +164,67 @@
 	width: 25%;
 	min-width: 250px;
 	height: 500px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	gap: var(--medium-gap);
+	padding: var(--tiny-padding);
 	background-color: var(--dark-black);
 	border-radius: var(--main-border-radius);
+}
+
+.modal__header {
+	width: 100%;
+	display: inline-flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.modal__options {
+	height: 100%;
+	width: 100%;
+}
+
+.options__title {
+	margin-bottom: var(--tiny-margin);
+}
+
+.options__wrap {
+	margin-bottom: var(--small-margin);
+}
+
+.options__time {
+	width: 100%;
+	display: inline-flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: var(--small-gap);
+}
+
+.input-wrap {
+	width: 100%;
+}
+
+.input-label {
+	display: block;
+	color: var(--white);
+	font-size: var(--tiny-font-size);
+	margin-bottom: var(--tiny-margin);
+}
+
+.box-input {
+	width: 100%;
+	min-width: 70px;
+	color: var(--white);
+	font-family: var(--monospace-font);
+	font-size: var(--medium-font-size);
+	background: none;
+	border: solid 1px var(--light-gray);
+	border-radius: var(--main-border-radius);
+	outline: none;
+}
+
+.box-input:focus  {
+	border-color: var(--tomato-red);
 }

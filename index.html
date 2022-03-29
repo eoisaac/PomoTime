@@ -26,7 +26,7 @@
     <div class="root">
       <main class="main">
         <header class="main__header">
-          <h1 class="header__title">PomoTime</h1>
+          <h1 class="main__title">PomoTime</h1>
 
           <div class="header__menu">
             <button class="box-btn" data-js="user-btn">
@@ -83,11 +83,40 @@
       </main>
     </div>
 
-    <div class="modal" data-js="modal">
+    <div class="modal modal--visible" data-js="modal">
       <div class="modal__container">
-        <button class="box-btn" data-js="close-modal-btn">
-          <i class="uil uil-times"></i>
-        </button>
+        
+        <div class="modal__header">
+          <h3 class="main__title main__title--medium">Timer Settings</h3>
+
+          <button class="box-btn" data-js="close-modal-btn">
+            <i class="uil uil-times"></i>
+          </button>
+        </div>
+      
+        <div class="modal__options">
+
+          <h3 class="options__title main__subtitle main__subtitle--small">Time</h3>
+
+          <div class="options__time options__wrap">
+            <div>
+              <label for="pomodoro-input" class="input-label">Pomodoro</label>
+              <input type="number" class="box-input" min="0" max="60" id="pomodoro-input">
+            </div>
+
+            <div>
+              <label for="short-break-input" class="input-label">Short Break</label>
+              <input type="number" class="box-input" min="0" max="60" id="short-break-input">
+            </div>
+
+            <div>
+              <label for="long-break-input" class="input-label">Long Break</label>
+              <input type="number" class="box-input" min="0" max="60" id="long-break-input">
+              </div>
+            </div>
+
+            <h3 class="options__title main__subtitle main__subtitle--small"></h3>
+        </div>
 
         <button class="box-btn" data-js="save-settings-btn">
           <i class="uil uil-save"> Save</i>
