@@ -41,25 +41,16 @@
         </header>
 
         <div class="main__areas">
-
           <section class="areas__pomodoro">
-
             <div class="pomodoro__modes">
               <button class="box-btn" data-js="prev-btn">
                 <i class="uil uil-angle-left"></i>
               </button>
 
-              <div class="options-wrap">
-
-                <div class="mode__option mode__option--visible">
-                  Pomodoro
-                </div>
-                <div class="mode__option">
-                  Short Break
-                </div>
-                <div class="mode__option">
-                  Long Break
-                </div>
+              <div class="modes-wrap">
+                <div class="modes__mode modes__mode--visible">Pomodoro</div>
+                <div class="modes__mode">Short Break</div>
+                <div class="modes__mode">Long Break</div>
               </div>
 
               <button class="box-btn" data-js="next-btn">
@@ -67,10 +58,10 @@
               </button>
             </div>
 
-            <div class="pomodoro__timer ">
+            <div class="pomodoro__timer">
               <div class="timer__progress">
                 <div class="timer__status" data-js="status-msg">Work!</div>
-                <div class="timer__clock">25:00</div>
+                <div class="timer__clock" data-js="timer-countdown">25:00</div>
               </div>
             </div>
 
@@ -78,14 +69,12 @@
               <i class="uil uil-play"></i>
             </button>
           </section>
-
         </div>
       </main>
     </div>
 
-    <div class="modal modal--visible" data-js="modal">
+    <div class="modal" data-js="modal">
       <div class="modal__container">
-        
         <div class="modal__header">
           <h3 class="main__title main__title--medium">Timer Settings</h3>
 
@@ -93,29 +82,55 @@
             <i class="uil uil-times"></i>
           </button>
         </div>
-      
-        <div class="modal__options">
 
-          <h3 class="options__title main__subtitle main__subtitle--small">Time</h3>
+        <div class="modal__modes">
+          <h3 class="modes__title main__subtitle main__subtitle--small">
+            Time
+          </h3>
 
-          <div class="options__time options__wrap">
+          <div class="modes__time modes__wrap">
             <div>
               <label for="pomodoro-input" class="input-label">Pomodoro</label>
-              <input type="number" class="box-input" min="0" max="60" id="pomodoro-input">
+              <input
+                type="number"
+                class="box-input"
+                min="0"
+                max="60"
+                value="25"
+                id="pomodoro-input"
+              />
             </div>
 
             <div>
-              <label for="short-break-input" class="input-label">Short Break</label>
-              <input type="number" class="box-input" min="0" max="60" id="short-break-input">
+              <label for="short-break-input" class="input-label"
+                >Short Break</label
+              >
+              <input
+                type="number"
+                class="box-input"
+                min="0"
+                max="60"
+                value="5"
+                id="short-break-input"
+              />
             </div>
 
             <div>
-              <label for="long-break-input" class="input-label">Long Break</label>
-              <input type="number" class="box-input" min="0" max="60" id="long-break-input">
-              </div>
+              <label for="long-break-input" class="input-label"
+                >Long Break</label
+              >
+              <input
+                type="number"
+                class="box-input"
+                min="0"
+                max="60"
+                value="15"
+                id="long-break-input"
+              />
             </div>
+          </div>
 
-            <h3 class="options__title main__subtitle main__subtitle--small"></h3>
+          <h3 class="modes__title main__subtitle main__subtitle--small"></h3>
         </div>
 
         <button class="box-btn" data-js="save-settings-btn">
@@ -123,7 +138,6 @@
         </button>
       </div>
     </div>
-
 
     <script src="src/js/script.js"></script>
   </body>

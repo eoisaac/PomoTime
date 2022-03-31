@@ -92,7 +92,7 @@
 	gap: var(--small-gap);
 }
 
-.mode__option {
+.modes__mode {
 	width: 100%;
 	display: none;
 	border-radius: var(--main-border-radius);
@@ -102,7 +102,7 @@
 	font-family: var(--monospace-font);
 }
 
-.mode__option--visible {
+.modes__mode--visible {
 	display: block;
 }
 
@@ -181,20 +181,20 @@
 	align-items: center;
 }
 
-.modal__options {
+.modal__modes {
 	height: 100%;
 	width: 100%;
 }
 
-.options__title {
+.modes__title {
 	margin-bottom: var(--tiny-margin);
 }
 
-.options__wrap {
+.modes__wrap {
 	margin-bottom: var(--small-margin);
 }
 
-.options__time {
+.modes__time {
 	width: 100%;
 	display: inline-flex;
 	align-items: center;

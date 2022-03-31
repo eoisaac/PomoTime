@@ -6,42 +6,43 @@ const interface = {
 const timer = {
   nextBtn: document.querySelector('[data-js="next-btn"]'),
   prevBtn: document.querySelector('[data-js="prev-btn"]'),
-  modeOptions: document.querySelectorAll('.mode__option '),
+  modes: document.querySelectorAll('.modes__mode '),
   startStopBtn: document.querySelector('[data-js="start-stop-btn"]'),
+  countdown: document.querySelector('[data-js="timer-countdown"]'),
   status: document.querySelector('[data-js="status-msg"]'),
 };
 
-// Timer options
+// Timer modes
 const statusMessage = ['Work!', 'Relax!', 'Relax!'];
 
-let lastModeOption = timer.modeOptions.length - 1;
-let currentModeOption = 0;
+let lastMode = timer.modes.length - 1;
+let currentModeIndex = 0;
 
-const changeModeOptions = (optionIndex) => {
-  timer.modeOptions.forEach((option) => {
-    option.classList.remove('mode__option--visible');
-    timer.modeOptions[optionIndex].classList.add('mode__option--visible');
+const toggleMode = (modeIndex) => {
+  timer.modes.forEach((option) => {
+    option.classList.remove('modes__mode--visible');
+    timer.modes[modeIndex].classList.add('modes__mode--visible');
 
-    timer.status.textContent = statusMessage[optionIndex];
+    timer.status.textContent = statusMessage[modeIndex];
   });
 };
 
 timer.nextBtn.addEventListener('click', () => {
-  const optionIndex =
-    currentModeOption === lastModeOption
-      ? (currentModeOption = 0)
-      : ++currentModeOption;
+  const modeIndex =
+    currentModeIndex === lastMode
+      ? (currentModeIndex = 0)
+      : ++currentModeIndex;
 
-  changeModeOptions(optionIndex);
+  toggleMode(modeIndex);
 });
 
 timer.prevBtn.addEventListener('click', () => {
-  const optionIndex =
-    currentModeOption === 0
-      ? (currentModeOption = lastModeOption)
-      : --currentModeOption;
+  const modeIndex =
+    currentModeIndex === 0
+      ? (currentModeIndex = lastMode)
+      : --currentModeIndex;
 
-  changeModeOptions(optionIndex);
+  toggleMode(modeIndex);
 });
 
 // Settings Modal
