@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 // [LOCAL STORAGE]==============================================================
 const setItemOnLocalStorage = (key, value) => {
   if (key && value) localStorage.setItem(key, value);
@@ -103,4 +101,3 @@ window.addEventListener('load', () => {
   updateInputsOfSettings();
   saveSettings();
 });
->>>>>>> feature/timer
