@@ -17,7 +17,7 @@
 
     <link
       rel="shortcut icon"
-      href="src/img/tomatoe-ico.ico"
+      href="src/img/tomato-ico.ico"
       type="image/x-icon"
     />
     <title>PomoTime</title>
@@ -75,6 +75,7 @@
 
     <div class="modal" data-js="modal">
       <div class="modal__container">
+
         <div class="modal__header">
           <h3 class="main__title main__title--medium">Timer Settings</h3>
 
@@ -83,59 +84,62 @@
           </button>
         </div>
 
-        <div class="modal__modes">
-          <h3 class="modes__title main__subtitle main__subtitle--small">
-            Time
-          </h3>
-
-          <div class="modes__time modes__wrap">
-            <div>
-              <label for="pomodoro-input" class="input-label">Pomodoro</label>
-              <input
-                type="number"
-                class="box-input"
-                min="0"
-                max="60"
-                value="25"
-                id="pomodoro-input"
-              />
+        <form name="timerSettings" class="modal__form">
+          <div class="modal__modes">
+            <h3 class="modes__title main__subtitle main__subtitle--small">
+              Time
+            </h3>
+            <div class="modes__time modes__wrap">
+              <div>
+                <label for="pomodoro-input" class="input-label">Pomodoro</label>
+                <input
+                  type="number"
+                  name="pomodoroTime"
+                  class="box-input"
+                  min="0"
+                  max="60"
+                  value="25"
+                  id="pomodoro-input"
+                />
+              </div>
+  
+              <div>
+                <label for="short-break-input" class="input-label"
+                  >Short Break</label
+                >
+                <input
+                  type="number"
+                  name="shortBreakTime"
+                  class="box-input"
+                  min="0"
+                  max="60"
+                  value="5"
+                  id="short-break-input"
+                />
+              </div>
+  
+              <div>
+                <label for="long-break-input" class="input-label"
+                  >Long Break</label
+                >
+                <input
+                  type="number"
+                  name="longBreakTime"
+                  class="box-input"
+                  min="0"
+                  max="60"
+                  value="15"
+                  id="long-break-input"
+                />
+              </div>
             </div>
-
-            <div>
-              <label for="short-break-input" class="input-label"
-                >Short Break</label
-              >
-              <input
-                type="number"
-                class="box-input"
-                min="0"
-                max="60"
-                value="5"
-                id="short-break-input"
-              />
-            </div>
-
-            <div>
-              <label for="long-break-input" class="input-label"
-                >Long Break</label
-              >
-              <input
-                type="number"
-                class="box-input"
-                min="0"
-                max="60"
-                value="15"
-                id="long-break-input"
-              />
-            </div>
+  
           </div>
-
-          <h3 class="modes__title main__subtitle main__subtitle--small"></h3>
-        </div>
-
-        <button class="box-btn" data-js="save-settings-btn">
-          <i class="uil uil-save"> Save</i>
-        </button>
+  
+          <button type="submit" class="box-btn">
+            <i class="uil uil-save">Save</i>
+          </button>
+        </form>
       </div>
     </div>
 

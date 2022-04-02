@@ -166,8 +166,6 @@
 	height: 500px;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
-	align-items: center;
 	gap: var(--medium-gap);
 	padding: var(--tiny-padding);
 	background-color: var(--dark-black);
@@ -181,9 +179,12 @@
 	align-items: center;
 }
 
-.modal__modes {
+.modal__form {
 	height: 100%;
-	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
 }
 
 .modes__title {
