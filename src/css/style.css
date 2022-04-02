@@ -49,8 +49,119 @@
 	transform: translateY(-5px);
 }
 
+<<<<<<< HEAD
 @keyframes tomatoMove {
 	to {
 		transform: rotate(-20deg) scale(1.1);
 	}
+=======
+.timer__progress {
+	position: relative;
+  height: 100%;
+  width: 100%;
+  border-radius: var(--round-border-radius);
+  display: grid;
+  place-items: center;
+	background-color: var(--light-black);
+}
+
+.timer__progress::before {
+	content: "";
+  position: absolute;
+  height: 95%;
+  width: 95%;
+  border-radius: var(--round-border-radius);
+	background-color: var(--dark-black);
+}
+
+.timer__clock {
+	position: relative;
+	font-size: var(--huge-font-size);
+	color: var(--white);
+}
+
+/* [SETTINGS MODAL]============================================================ */
+.modal {
+	width: 100vw;
+	height: 100vh;
+	display: none;
+	place-items: center;
+	position: fixed;
+	inset: 0 0;
+	background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal.modal--visible {
+	display: grid;
+}
+
+.modal__container {
+	width: 25%;
+	min-width: 250px;
+	height: 500px;
+	display: flex;
+	flex-direction: column;
+	gap: var(--medium-gap);
+	padding: var(--tiny-padding);
+	background-color: var(--dark-black);
+	border-radius: var(--main-border-radius);
+}
+
+.modal__header {
+	width: 100%;
+	display: inline-flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.modal__form {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.modes__title {
+	margin-bottom: var(--tiny-margin);
+}
+
+.modes__wrap {
+	margin-bottom: var(--small-margin);
+}
+
+.modes__time {
+	width: 100%;
+	display: inline-flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: var(--small-gap);
+}
+
+.input-wrap {
+	width: 100%;
+}
+
+.input-label {
+	display: block;
+	color: var(--white);
+	font-size: var(--tiny-font-size);
+	margin-bottom: var(--tiny-margin);
+}
+
+.box-input {
+	width: 100%;
+	min-width: 70px;
+	color: var(--white);
+	font-family: var(--monospace-font);
+	font-size: var(--medium-font-size);
+	background: none;
+	border: solid 1px var(--light-gray);
+	border-radius: var(--main-border-radius);
+	outline: none;
+}
+
+.box-input:focus  {
+	border-color: var(--tomato-red);
+>>>>>>> feature/timer
 }

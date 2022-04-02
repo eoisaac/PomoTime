@@ -17,7 +17,7 @@
 
     <link
       rel="shortcut icon"
-      href="src/img/tomatoe-ico.ico"
+      href="src/img/tomato-ico.ico"
       type="image/x-icon"
     />
     <title>PomoTime</title>
@@ -36,7 +36,97 @@
 
         <img src="src/img/in_development.svg" alt="" class="container__img">
 
+<<<<<<< HEAD
         <a href="https://github.com/eoisaac" target="_blank" class="container__link">@eoisaac</a>
+=======
+              <button class="box-btn" data-js="next-btn">
+                <i class="uil uil-angle-right"></i>
+              </button>
+            </div>
+
+            <div class="pomodoro__timer">
+              <div class="timer__progress">
+                <div class="timer__status" data-js="status-msg">Work!</div>
+                <div class="timer__clock" data-js="timer-countdown">25:00</div>
+              </div>
+            </div>
+
+            <button class="box-btn" data-js="start-stop-btn">
+              <i class="uil uil-play"></i>
+            </button>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <div class="modal" data-js="modal">
+      <div class="modal__container">
+
+        <div class="modal__header">
+          <h3 class="main__title main__title--medium">Timer Settings</h3>
+
+          <button class="box-btn" data-js="close-modal-btn">
+            <i class="uil uil-times"></i>
+          </button>
+        </div>
+
+        <form name="timerSettings" class="modal__form">
+          <div class="modal__modes">
+            <h3 class="modes__title main__subtitle main__subtitle--small">
+              Time
+            </h3>
+            <div class="modes__time modes__wrap">
+              <div>
+                <label for="pomodoro-input" class="input-label">Pomodoro</label>
+                <input
+                  type="number"
+                  name="pomodoroTime"
+                  class="box-input"
+                  min="0"
+                  max="60"
+                  value="25"
+                  id="pomodoro-input"
+                />
+              </div>
+  
+              <div>
+                <label for="short-break-input" class="input-label"
+                  >Short Break</label
+                >
+                <input
+                  type="number"
+                  name="shortBreakTime"
+                  class="box-input"
+                  min="0"
+                  max="60"
+                  value="5"
+                  id="short-break-input"
+                />
+              </div>
+  
+              <div>
+                <label for="long-break-input" class="input-label"
+                  >Long Break</label
+                >
+                <input
+                  type="number"
+                  name="longBreakTime"
+                  class="box-input"
+                  min="0"
+                  max="60"
+                  value="15"
+                  id="long-break-input"
+                />
+              </div>
+            </div>
+  
+          </div>
+  
+          <button type="submit" class="box-btn">
+            <i class="uil uil-save">Save</i>
+          </button>
+        </form>
+>>>>>>> feature/timer
       </div>
     </div>
   </body>

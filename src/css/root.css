@@ -70,3 +70,8 @@ html {
   scroll-behavior: smooth;
   background-color: var(--dark-black);
 }
+
+::selection {
+  background-color: var(--tomato-red);
+  color: var(--white);
+}
