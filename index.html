@@ -15,20 +15,24 @@
       href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
     />
 
-    <link
-      rel="shortcut icon"
-      href="src/img/tomato-ico.ico"
-      type="image/x-icon"
-    />
+    <link rel="shortcut icon" href="src/img/tomato-ico.ico" type="image/x-icon" />
     <title>PomoTime</title>
   </head>
   <body>
     <div class="root">
       <div class="container">
 
-        <h1 class="container__title">
-          <img src="src/img/tomatoe.svg" alt="" class="title__image">
-          PomoTime</h1>
+          <div class="header__menu">
+            <button class="box-btn" data-js="user-profile-btn">
+              <i class="uil uil-user-circle"></i>
+              <span class="btn__label"> Login </span>
+            </button>
+            <button class="box-btn" data-js="toggle-settings-btn">
+              <i class="uil uil-setting"></i>
+              <span class="btn__label"> Settings </span>
+            </button>
+          </div>
+        </header>
 
         <h2 class="container__subtitle">
           Under development...
@@ -36,23 +40,20 @@
 
         <img src="src/img/in_development.svg" alt="" class="container__img">
 
-<<<<<<< HEAD
-        <a href="https://github.com/eoisaac" target="_blank" class="container__link">@eoisaac</a>
-=======
               <button class="box-btn" data-js="next-btn">
                 <i class="uil uil-angle-right"></i>
               </button>
             </div>
 
             <div class="pomodoro__timer">
-              <div class="timer__progress">
+              <div class="timer__progress" data-js="timer-progress">
                 <div class="timer__status" data-js="status-msg">Work!</div>
                 <div class="timer__clock" data-js="timer-countdown">25:00</div>
               </div>
             </div>
 
             <button class="box-btn" data-js="start-stop-btn">
-              <i class="uil uil-play"></i>
+              <i class="uil uil-play" data-js="start-stop-icon"></i>
             </button>
           </section>
         </div>
@@ -61,11 +62,10 @@
 
     <div class="modal" data-js="modal">
       <div class="modal__container">
-
         <div class="modal__header">
           <h3 class="main__title main__title--medium">Timer Settings</h3>
 
-          <button class="box-btn" data-js="close-modal-btn">
+          <button class="box-btn" data-js="toggle-settings-btn">
             <i class="uil uil-times"></i>
           </button>
         </div>
@@ -88,7 +88,7 @@
                   id="pomodoro-input"
                 />
               </div>
-  
+
               <div>
                 <label for="short-break-input" class="input-label"
                   >Short Break</label
@@ -103,7 +103,7 @@
                   id="short-break-input"
                 />
               </div>
-  
+
               <div>
                 <label for="long-break-input" class="input-label"
                   >Long Break</label
@@ -119,14 +119,12 @@
                 />
               </div>
             </div>
-  
           </div>
-  
+
           <button type="submit" class="box-btn">
             <i class="uil uil-save">Save</i>
           </button>
         </form>
->>>>>>> feature/timer
       </div>
     </div>
   </body>

@@ -68,8 +68,8 @@
 .timer__progress::before {
 	content: "";
   position: absolute;
-  height: 95%;
-  width: 95%;
+  height: 93%;
+  width: 93%;
   border-radius: var(--round-border-radius);
 	background-color: var(--dark-black);
 }
