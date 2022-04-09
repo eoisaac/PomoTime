@@ -13,84 +13,94 @@ const removeItemOfLocalStorage = (key) => {
   return;
 };
 
-const interface = {
-  userBtn: document.querySelector('[data-js="user-btn"]'),
-  settingsBtn: document.querySelector('[data-js="settings-btn"]'),
-};
+const leftZero = (number) => (number < 10 ? `0${number}` : number);
+// =============================================================================
 
-const toggleSettingsModal = () => {
-  settings.modal.classList.toggle('modal--visible');
+const DOM = {
+  userProfileBtn: document.querySelector('[data-js="user-profile-btn"]'),
+  modal: document.querySelector('[data-js="modal"]'),
+  toggleSettingsBtn: document.querySelectorAll(
+    '[data-js="toggle-settings-btn"]'
+  ),
+
+  timer: {
+    nextModeBtn: document.querySelector('[data-js="next-btn"]'),
+    prevModeBtn: document.querySelector('[data-js="prev-btn"]'),
+    modes: document.querySelectorAll('.modes__mode '),
+    startStopBtn: document.querySelector('[data-js="start-stop-btn"]'),
+    countdown: document.querySelector('[data-js="timer-countdown"]'),
+    progress: document.querySelector('[data-js="timer-progress"]'),
+    status: document.querySelector('[data-js="status-msg"]'),
+  },
+
+  settings: {
+    form: document.forms.timerSettings,
+  },
 };
 
 // [SETTINGS MODAL]=============================================================
-const settings = {
-  modal: document.querySelector('[data-js="modal"]'),
-  closeBtn: document.querySelector('[data-js="close-modal-btn"]'),
-  form: document.forms.timerSettings,
+const toggleSettingsModal = () => {
+  DOM.modal.classList.toggle('modal--visible');
 };
 
-const { pomodoroTime, shortBreakTime, longBreakTime } = settings.form;
-const settingInputs = [pomodoroTime, shortBreakTime, longBreakTime];
-
-const saveSettings = () => {
-  settingInputs.forEach((input) => {
-    setItemOnLocalStorage(input.name, input.value);
-  });
+const saveSettings = (settingsObj) =>{ 
+  const JSONSettings = JSON.stringify(settingsObj);
+  
+  setItemOnLocalStorage('settings', JSONSettings);
 };
 
-const updateInputsOfSettings = () => {
-  if (getItemOfLocalStorage('pomodoroTime')) {
-    settingInputs.forEach((input) => {
-      input.value = getItemOfLocalStorage(input.name);
-    });
-  }
+const updateSettings = () => {
+  let settings = JSON.parse(getItemOfLocalStorage('settings'));
 };
 
-interface.settingsBtn.addEventListener('click', toggleSettingsModal);
-settings.closeBtn.addEventListener('click', () => {
-  updateInputsOfSettings();
-  toggleSettingsModal();
+DOM.toggleSettingsBtn.forEach((btn) => {
+  btn.addEventListener('click', toggleSettingsModal);
 });
 
-settings.form.addEventListener('submit', (event) => {
+DOM.settings.form.addEventListener('submit', (event) => {
   event.preventDefault();
+  const form = DOM.settings.form;
 
-  saveSettings();
+  const settings = {
+    modes: {
+      pomodoroTime: form.pomodoroTime.value,
+      shortBreakTime: form.shortBreakTime.value,
+      longBreakTime: form.longBreakTime.value,
+    },
+    // otherSettings,
+  }
+
+  saveSettings(settings);
   toggleSettingsModal();
+
+  setTimeout(() => {
+    updateSettings();
+  }, 1000);
 });
 
-const timer = {
-  nextBtn: document.querySelector('[data-js="next-btn"]'),
-  prevBtn: document.querySelector('[data-js="prev-btn"]'),
-  modes: document.querySelectorAll('.modes__mode '),
-  startStopBtn: document.querySelector('[data-js="start-stop-btn"]'),
-  countdown: document.querySelector('[data-js="timer-countdown"]'),
-  status: document.querySelector('[data-js="status-msg"]'),
-};
-
-// [TIMER MODES]================================================================
+// [CHANGE TIMER MODE]==========================================================
 const statusMessage = ['Work!', 'Relax!', 'Relax!'];
 
-let lastMode = timer.modes.length - 1;
+let lastMode = DOM.timer.modes.length - 1;
 let currentModeIndex = 0;
 
 const toggleMode = (modeIndex) => {
-  timer.modes.forEach((option) => {
+  DOM.timer.modes.forEach((option) => {
     option.classList.remove('modes__mode--visible');
-    timer.modes[modeIndex].classList.add('modes__mode--visible');
+    DOM.timer.modes[modeIndex].classList.add('modes__mode--visible');
 
-    timer.status.textContent = statusMessage[modeIndex];
+    DOM.timer.status.textContent = statusMessage[modeIndex];
   });
 };
 
-timer.nextBtn.addEventListener('click', () => {
+DOM.timer.nextModeBtn.addEventListener('click', () => {
   const modeIndex =
     currentModeIndex === lastMode ? (currentModeIndex = 0) : ++currentModeIndex;
 
   toggleMode(modeIndex);
 });
 
-timer.prevBtn.addEventListener('click', () => {
+DOM.timer.prevModeBtn.addEventListener('click', () => {
   const modeIndex =
     currentModeIndex === 0 ? (currentModeIndex = lastMode) : --currentModeIndex;
 
@@ -98,6 +108,5 @@ timer.prevBtn.addEventListener('click', () => {
 });
 
 window.addEventListener('load', () => {
-  updateInputsOfSettings();
-  saveSettings();
+  console.log('Page is fully loaded');
 });
