@@ -43,14 +43,21 @@ const toggleSettingsModal = () => {
   DOM.modal.classList.toggle('modal--visible');
 };
 
-const saveSettings = (settingsObj) =>{ 
+const saveSettings = (settingsObj) => {
   const JSONSettings = JSON.stringify(settingsObj);
-  
+
   setItemOnLocalStorage('settings', JSONSettings);
 };
 
 const updateSettings = () => {
+  const form = DOM.settings.form;
+
   let settings = JSON.parse(getItemOfLocalStorage('settings'));
+  let settingsArray = Object.entries(settings);
+
+  settingsArray.forEach((setting) => {
+    form[setting[0]].value = setting[1];
+  });
 };
 
 DOM.toggleSettingsBtn.forEach((btn) => {
@@ -59,23 +66,18 @@ DOM.toggleSettingsBtn.forEach((btn) => {
 
 DOM.settings.form.addEventListener('submit', (event) => {
   event.preventDefault();
-  const form = DOM.settings.form;
 
+  const form = DOM.settings.form;
   const settings = {
-    modes: {
-      pomodoroTime: form.pomodoroTime.value,
-      shortBreakTime: form.shortBreakTime.value,
-      longBreakTime: form.longBreakTime.value,
-    },
+    pomodoroTime: form.pomodoroTime.value,
+    shortBreakTime: form.shortBreakTime.value,
+    longBreakTime: form.longBreakTime.value,
     // otherSettings,
-  }
+  };
 
   saveSettings(settings);
+  updateSettings();
   toggleSettingsModal();
-
-  setTimeout(() => {
-    updateSettings();
-  }, 1000);
 });
 
 // [CHANGE TIMER MODE]==========================================================
@@ -109,4 +111,5 @@ DOM.timer.prevModeBtn.addEventListener('click', () => {
 
 window.addEventListener('load', () => {
   console.log('Page is fully loaded');
+  updateSettings();
 });
