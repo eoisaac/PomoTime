@@ -82,16 +82,28 @@ DOM.settings.form.addEventListener('submit', (event) => {
 
 // [CHANGE TIMER MODE]==========================================================
 const statusMessage = ['Work!', 'Relax!', 'Relax!'];
+const modes = ['pomodoroTime', 'shortBreakTime', 'longBreakTime'];
 
 let lastMode = DOM.timer.modes.length - 1;
 let currentModeIndex = 0;
 
 const toggleMode = (modeIndex) => {
-  DOM.timer.modes.forEach((option) => {
-    option.classList.remove('modes__mode--visible');
-    DOM.timer.modes[modeIndex].classList.add('modes__mode--visible');
+  const form = DOM.settings.form;
 
+  DOM.timer.modes.forEach((option) => {
+    const currentMode = JSON.parse(getItemOfLocalStorage('settings'))[
+      modes[modeIndex]
+    ];
+
+    option.classList.remove('modes__mode--visible');
+
+    DOM.timer.modes[modeIndex].classList.add('modes__mode--visible');
     DOM.timer.status.textContent = statusMessage[modeIndex];
+    DOM.timer.countdown.textContent = `${leftZero(currentMode)}:00`;
+
+    setItemOnLocalStorage('currentMode', currentMode)
+
+    // update currentTime variable
   });
 };
 
@@ -113,3 +125,5 @@ window.addEventListener('load', () => {
   console.log('Page is fully loaded');
   updateSettings();
 });
+
+const countdownTimer = () => {};
